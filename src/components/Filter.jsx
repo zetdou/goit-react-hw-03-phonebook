@@ -1,6 +1,8 @@
 import { Component } from "react";
 import { nanoid } from "nanoid";
 import PropTypes from "prop-types";
+import styles from "../styles/ContactForm.module.css"
+
 
 export default class Filter extends Component {
   static propTypes = {
@@ -13,9 +15,10 @@ export default class Filter extends Component {
     const searchId = nanoid();
 
     return (
-      <div>
-        <label htmlFor={searchId}>Find contact</label>
+      <div className={styles.filterContainer}>
+        <label className={styles.phonebookFormLabels} htmlFor={searchId}>Find contact</label>
         <input
+          className={styles.phonebookFormInputs}
           type="text"
           id={searchId}
           name="filter"

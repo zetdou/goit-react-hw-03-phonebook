@@ -2,6 +2,7 @@ import { Component } from "react";
 import { nanoid } from "nanoid";
 import PropTypes from "prop-types";
 import ContactListItem from "./ContactListItem";
+import styles from "../styles/ContactList.module.css";
 
 export default class ContactList extends Component {
   static propTypes = {
@@ -19,7 +20,7 @@ export default class ContactList extends Component {
     const { contacts, onDelete } = this.props;
 
     return (
-      <ul>
+      <ul className={styles.contactList}>
         {contacts.map(({ id, name, number }) => (
           <ContactListItem
             key={id}

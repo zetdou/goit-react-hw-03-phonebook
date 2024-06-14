@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { nanoid } from "nanoid";
 import PropTypes from "prop-types";
+import styles from "../styles/ContactListItem.module.css"
 
 export default class ContactListItem extends Component {
   static propTypes = {
@@ -14,9 +15,9 @@ export default class ContactListItem extends Component {
     const { id, name, number, onDelete } = this.props;
 
     return (
-      <li key={id}>
+      <li className={styles.contactListItem} key={id}>
         {name} - {number}
-        <button onClick={() => onDelete(id)}>Delete</button>
+        <button className={styles.deleteContactBtn} onClick={() => onDelete(id)}>Delete</button>
       </li>
     );
   }
